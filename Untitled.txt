@@ -1,0 +1,37 @@
+
+            base.Seed(context);
+
+            //Default Roles
+            context.Roles.Add(new Role() { Name = "Admin" });
+            context.Roles.Add(new Role() { Name = "Doctor" });
+            context.Roles.Add(new Role() { Name = "Patient" });
+            context.Roles.Add(new Role() { Name = "Front Executive" });
+            context.Roles.Add(new Role() { Name = "Pharmacist" });
+
+            //Admin
+            context.Admins.Add(new Admin { EmailId = "admin@gmail.com", Password = "admin" });
+
+            //Default Medicine
+            context.Medicines.Add(new Medicine { MedicineName = "Aspirin", Stock = 10, Price = 60, Tax = 5, IsAvailable = true });
+            context.Medicines.Add(new Medicine { MedicineName = "Paracetamol", Stock = 5, Price = 10, Tax = 5, IsAvailable = true });
+            context.Medicines.Add(new Medicine { MedicineName = "Naproxen", Stock = 52, Price = 25, Tax = 5, IsAvailable = true });
+            context.Medicines.Add(new Medicine { MedicineName = "Aspirinol", Stock = 60, Price = 45, Tax = 5, IsAvailable = true });
+            context.Medicines.Add(new Medicine { MedicineName = "Feveron", Stock = 20, Price = 18, Tax = 5, IsAvailable = true });
+            context.Medicines.Add(new Medicine { MedicineName = "Dolo 650", Stock = 5, Price = 40, Tax = 5, IsAvailable = true });
+            context.Medicines.Add(new Medicine { MedicineName = "Cetirizine", Stock = 10, Price = 20, Tax = 5, IsAvailable = true });
+            context.Medicines.Add(new Medicine { MedicineName = "Formost 400", Stock = 25, Price = 250, Tax = 5, IsAvailable = true });
+
+            //default Specializations for doctors
+
+            //Method-1
+            //Specialization specialization = new Specialization() { SpecializationName="dummy"};
+            //context.Specializations.Add(specialization);
+
+            //Method-2
+            context.Specializations.Add(new Specialization { SpecializationName = "Neurologist" });
+            context.Specializations.Add(new Specialization { SpecializationName = "Dentist" });
+            context.Specializations.Add(new Specialization { SpecializationName = "Psychlatrists" });
+            context.Specializations.Add(new Specialization { SpecializationName = "Cardiologist" });
+            context.Specializations.Add(new Specialization { SpecializationName = "Physicians" });
+
+            context.SaveChanges();
